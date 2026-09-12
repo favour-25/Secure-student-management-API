@@ -1,0 +1,188 @@
+:root {
+  --primary: #1f6f50;
+  --primary-dark: #16543c;
+  --bg: #f4f6f5;
+  --card-bg: #ffffff;
+  --border: #dfe4e2;
+  --text: #202824;
+  --text-muted: #667069;
+  --danger: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-dark);
+  color: white;
+  padding: 18px 32px;
+}
+
+.topbar h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.session-status {
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 20px auto;
+  max-width: 720px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.login-card {
+  margin-top: 60px;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+}
+
+.secondary-btn:hover {
+  background: #ecf3f0;
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 13px;
+  min-height: 18px;
+}
+
+.dashboard {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.dashboard.hidden,
+.login-card.hidden {
+  display: none;
+}
+
+.token-box {
+  display: block;
+  word-break: break-all;
+  background: #f0f2f1;
+  border: 1px dashed var(--border);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.student-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.student-form button {
+  grid-column: span 2;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.delete-link {
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.request-log {
+  font-family: "Consolas", monospace;
+  font-size: 12px;
+  background: #10201a;
+  color: #b7f5cf;
+  border-radius: 6px;
+  padding: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.request-log .log-line {
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

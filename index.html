@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Student Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Secure Student Management System</h1>
+    <span id="sessionStatus" class="session-status">Not signed in</span>
+  </header>
+
+  <!-- LOGIN VIEW -->
+  <section id="loginView" class="card login-card">
+    <h2>Admin Login</h2>
+    <p class="hint">Default demo account: <strong>admin</strong> / <strong>admin123</strong></p>
+
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="admin" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="loginError" class="error-text"></p>
+  </section>
+
+  <!-- DASHBOARD VIEW (hidden until login succeeds) -->
+  <section id="dashboardView" class="dashboard hidden">
+
+    <div class="card token-card">
+      <h3>Active Session</h3>
+      <p>Every request below is sent with this header attached, proving the API rejects unauthenticated calls:</p>
+      <code id="tokenPreview" class="token-box"></code>
+      <button id="logoutBtn" class="secondary-btn">Logout</button>
+    </div>
+
+    <div class="card">
+      <h3>Add Student Record</h3>
+      <form id="addStudentForm" class="student-form">
+        <input type="text" id="fullName" placeholder="Full Name (e.g. Adaeze Okafor)" required />
+        <input type="text" id="matricNumber" placeholder="Matric No. (e.g. RUN/CMP/23/1042)" required />
+        <input type="text" id="department" placeholder="Department (e.g. Computer Science)" required />
+        <input type="text" id="faculty" placeholder="Faculty (e.g. Faculty of Computing)" required />
+        <select id="level" required>
+          <option value="" disabled selected>Level</option>
+          <option value="100L">100L</option>
+          <option value="200L">200L</option>
+          <option value="300L">300L</option>
+          <option value="400L">400L</option>
+          <option value="500L">500L</option>
+        </select>
+        <button type="submit">Add Student</button>
+      </form>
+      <p id="addError" class="error-text"></p>
+    </div>
+
+    <div class="card">
+      <div class="panel-heading">
+        <h3>Student Records</h3>
+        <button id="refreshBtn" class="secondary-btn">Refresh</button>
+      </div>
+
+      <table id="studentsTable">
+        <thead>
+          <tr>
+            <th>Matric No.</th>
+            <th>Full Name</th>
+            <th>Department</th>
+            <th>Faculty</th>
+            <th>Level</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="studentsTableBody">
+          <!-- rows injected by app.js -->
+        </tbody>
+      </table>
+      <p id="emptyState" class="hint hidden">No student records yet. Add one above.</p>
+    </div>
+
+    <div class="card log-card">
+      <h3>Request Log</h3>
+      <p class="hint">Shows the last few requests, their endpoint, and the Authorization header sent with them.</p>
+      <div id="requestLog" class="request-log"></div>
+    </div>
+
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

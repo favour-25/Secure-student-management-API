@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "hashed_password": "$2b$12$UX6oK8O4I37kD4zfoqqVEOVA9i6M0tLe7oyqQNRALgsDlsl.gdymi"
+    }
+  ],
+  "students": [
+    {
+      "full_name": "Ogungbemi Favour",
+      "matric_number": "CSC/2023/81184",
+      "department": "Computer Science",
+      "faculty": "Faculty of Computing",
+      "level": "300L",
+      "id": 1
+    }
+  ]
+}
